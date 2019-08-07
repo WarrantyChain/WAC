@@ -21,10 +21,10 @@
 #define CLIENT_VERSION_MINOR 0
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 1
+#define CLIENT_VERSION_REVISION 0
 
 /* Version is release */
-#define COPYRIGHT_YEAR 2018
+#define COPYRIGHT_YEAR 2019
 
 /* Define to 1 to enable wallet functions */
 #define ENABLE_WALLET 1
@@ -274,13 +274,13 @@
 #define LT_OBJDIR ".libs/"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "www.wac.org"
+#define PACKAGE_BUGREPORT "www.warranty-chain.info"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "WAC Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "WAC Core 1.0.1"
+#define PACKAGE_STRING "WAC Core 1.0.0"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "wac"
