@@ -24,7 +24,7 @@ Cloning the repository and compiling (use any user with the sudo group):
     git clone https://github.com/WarrantyChain/WAC.git
     cd WAC
     ./autogen.sh
-    ./configure
+    ./configure --disable-tests --disable-gui-tests
     sudo make install
     cd src
     sudo strip wacd
