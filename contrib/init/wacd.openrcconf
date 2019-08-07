@@ -1,0 +1,26 @@
+# /etc/conf.d/wacd: config file for /etc/init.d/wacd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/wac/wac.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/wacd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/wacd.pid"
+
+# Where to write wacd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/wacd"
+
+# User and group to own wacd process
+#BITCOIND_USER="wac"
+#BITCOIND_GROUP="wac"
+
+# Path to wacd executable
+#BITCOIND_BIN="/usr/bin/wacd"
+
+# Nice value to run wacd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

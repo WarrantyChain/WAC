@@ -1,0 +1,1 @@
+qt/qt_libbitcoinqt_a-qrc_wac_locale.o: qt/qrc_wac_locale.cpp

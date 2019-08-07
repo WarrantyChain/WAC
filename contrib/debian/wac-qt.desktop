@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=WAC
+Comment=WAC P2P Cryptocurrency
+Comment[fr]=WAC, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=WAC, eşten eşe kriptografik sanal para birimi
+Exec=wac-qt %u
+Terminal=false
+Type=Application
+Icon=wac128
+MimeType=x-scheme-handler/wac;
+Categories=Office;Finance;

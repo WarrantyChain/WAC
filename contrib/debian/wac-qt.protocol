@@ -1,0 +1,11 @@
+[Protocol]
+exec=wac-qt '%u'
+protocol=wac
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

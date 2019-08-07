@@ -1,0 +1,26 @@
+[Unit]
+Description=WAC's distributed currency daemon
+After=network.target
+
+[Service]
+User=wac
+Group=wac
+
+Type=forking
+PIDFile=/var/lib/wacd/wacd.pid
+
+ExecStart=/usr/bin/wacd -daemon -pid=/var/lib/wacd/wacd.pid \
+          -conf=/etc/wac/wac.conf -datadir=/var/lib/wacd
+
+ExecStop=-/usr/bin/wac-cli -conf=/etc/wac/wac.conf \
+         -datadir=/var/lib/wacd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
