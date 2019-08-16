@@ -54,10 +54,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("00000b7e5f1c25f1d97d8e69f24ad8ba2791274c7a88f4eab15871e8811b2cc7"));
+    (0, uint256("00000a8346e7b9313688814c5feedc4a6d556224c1f5cfab41819264d075ac97"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1554758003, // * UNIX timestamp of last checkpoint block
+    1565542800, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -67,7 +67,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1524873600,
+    1565542810,
     0,
     250};
 
@@ -75,7 +75,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1524873600,
+    1565542820,
     0,
     100};
 
@@ -124,7 +124,7 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x65;
+        pchMessageStart[0] = 0x68;
         pchMessageStart[1] = 0x42;
         pchMessageStart[2] = 0x65;
         pchMessageStart[3] = 0x74;
@@ -167,23 +167,18 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1562875943;
+        genesis.nTime = 1565542800;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1957771;
-
-      //MineGenesis(genesis);
-      //std::cout << genesis.ToString() << std::endl;
-
+        genesis.nNonce = 4237785;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("00000a6686ee9c4fc6af021eaeadbe02fc3308ff9456a252a4cbf8137379a7f0"));
+        assert(hashGenesisBlock == uint256("00000a8346e7b9313688814c5feedc4a6d556224c1f5cfab41819264d075ac97"));
         assert(genesis.hashMerkleRoot == uint256("2a4a89b27a61e7927b0ab09cd49e59e2f357c6e5cd84125a2ab63ca9f9be49d4"));
 
-//        vSeeds.clear();
         vSeeds.push_back(CDNSSeedData("149.28.189.10", "149.28.189.10"));         // Single node address
         vSeeds.push_back(CDNSSeedData("217.69.5.114", "217.69.5.114"));           // Single node address
         vSeeds.push_back(CDNSSeedData("139.180.141.66", "139.180.141.66"));         // Single node address
-		vSeeds.push_back(CDNSSeedData("45.77.0.131", "45.77.0.131"));				// Single node address
+		    vSeeds.push_back(CDNSSeedData("45.77.0.131", "45.77.0.131"));				// Single node address
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 73);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 83);
@@ -248,19 +243,15 @@ public:
         nMaxMoneyOut = 43199500 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1524873600;
-        genesis.nNonce = 2474517;
+        genesis.nTime = 1565542810;
+        genesis.nNonce = 1422357;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("00000f7fa427422b6cd83143a33f7777a297e42863035a5a64434e0cf9fe6986"));
+        assert(hashGenesisBlock == uint256("0000046495324b219b3bd6197e4b822319f23a369e135057490d59655acfd766"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-/*
-        vSeeds.push_back(CDNSSeedData("80.211.128.125", "80.211.128.125"));         // Single node address
-        vSeeds.push_back(CDNSSeedData("94.177.187.54", "94.177.187.54"));           // Single node address
-        vSeeds.push_back(CDNSSeedData("80.211.129.187", "80.211.129.187"));         // Single node address
-*/
+
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet wac addresses start with 'x' or 'y'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet wac script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
@@ -317,13 +308,13 @@ public:
         nTargetTimespan = 24 * 60 * 60; // WAC: 1 day
         nTargetSpacing = 1 * 60;        // WAC: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1524873600;
+        genesis.nTime = 1565542820;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 975422;
+        genesis.nNonce = 8377310;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 39793;
-        assert(hashGenesisBlock == uint256("00000048993998e6a1cd03b394c0193caeff1f709a45ffc1b2bccbbf2bf9519a"));
+        assert(hashGenesisBlock == uint256("0000045bdd736b7b865333616d07f389b772846b8f509490b27d4335d7715a17"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
